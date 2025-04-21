@@ -9,6 +9,17 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.7.4"
+    "@astrojs/react": "^4.2.4",
+    "@fontsource/inter": "^5.2.5",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "astro": "^5.7.4",
+    "clsx": "^2.1.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "sass": "^1.86.3",
+    "vite-plugin-svgr": "^4.3.0"
   }
 }

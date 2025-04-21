@@ -1,22 +1,53 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import clsx from 'clsx';
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+import Footer from '@/components/Footer/Footer.astro';
+import Header from '@/components/Header/Header.astro';
+
+import './global.scss';
+
+interface Props {
+  title: string;
+  description?: string;
+  mt?: boolean;
+  mb?: boolean;
+}
+
+const { mt, mb } = Astro.props;
+const title = `${Astro.props.title} | Mirkashev's portfolio`;
+const description =
+  Astro.props.description ??
+  "Mirkashev's portfolio. This is a personal website showcasing my work and projects.";
+---
+
+<!doctype html>
+<html lang='ru'>
+  <head>
+    <meta charset='UTF-8' />
+    <title>{title}</title>
+    <meta name='description' content={description} />
+    <meta name='viewport' content='width=device-width' />
+
+    <link rel='icon' type='image/svg+xml' href='/portfolio-web/favicon.svg' />
+    <!-- <link rel='apple-touch-icon' href='/apple-touch-icon.png' /> -->
+
+    <meta property='og:type' content='Website' />
+    <meta property='og:url' content={import.meta.env.SITE_URL} />
+    <meta property='og:title' content={title} />
+    <meta property='og:description' content={description} />
+    <meta property='og:image' content='/opengraph.png' />
+    <meta property='og:image:width' content='1200' />
+    <meta property='og:image:height' content='630' />
+
+    <meta name='twitter:card' content='summary' />
+    <meta name='twitter:title' content={title} />
+    <meta name='twitter:description' content={description} />
+  </head>
+  <body>
+    <Header />
+    <main class={clsx({ mt: mt, mb: mb })}>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
