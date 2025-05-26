@@ -4,7 +4,8 @@ import clsx from 'clsx';
 import Footer from '@/components/Footer/Footer.astro';
 import Header from '@/components/Header/Header.astro';
 
-import './global.scss';
+import '@/assets/styles/global.scss';
+import styles from './Layout.module.scss';
 
 interface Props {
   title: string;
@@ -45,7 +46,7 @@ const description =
   </head>
   <body>
     <Header />
-    <main class={clsx({ mt: mt, mb: mb })}>
+    <main class={clsx(styles.root, { mt: mt, mb: mb })}>
       <slot />
     </main>
     <Footer />

@@ -1,5 +1,48 @@
 ---
+import Typography from '@/shared/ui/Typography/Typography';
 import styles from './Header.module.scss';
+import IconLogo from '@/assets/icons/icon-logo.svg';
+import { Image } from 'astro:assets';
+import clsx from 'clsx';
+
+const NAV_TABS = [
+  {
+    name: 'Work',
+    href: '',
+  },
+  {
+    name: 'About',
+    href: '/about',
+  },
+  {
+    name: 'Contact',
+    href: '/contact',
+  },
+  {
+    name: 'Other',
+    href: '/other',
+  },
+];
+
+const currentPath = Astro.url.pathname;
+
+console.log(currentPath);
 ---
 
-<header class={styles.root}>header</header>
+<header class={styles.root}>
+  <Image src={IconLogo} alt='logo' />
+  <div class={styles.nav}>
+    {
+      NAV_TABS.map((el) => (
+        <Typography
+          className={clsx({ [styles.active]: currentPath.includes(el.href) })}
+          key={el.name}
+          href={el.href}
+          as='a'
+        >
+          {el.name}
+        </Typography>
+      ))
+    }
+  </div>
+</header>

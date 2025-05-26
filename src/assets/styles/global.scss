@@ -1,6 +1,6 @@
-@use '@/assets/styles/fonts.scss';
-@use '@/assets/styles/reset.scss';
-@use '@/assets/styles/consts.scss';
+@use './fonts.scss';
+@use './reset.scss';
+@use './consts.scss';
 
 ::-webkit-scrollbar {
   width: 5px;
