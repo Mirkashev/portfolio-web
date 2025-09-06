@@ -1,0 +1,22 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.content {
+  border-top: 2px solid var(--black);
+  padding-top: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.description {
+  flex: 1;
+}
+
+.accordion {
+  flex: 1;
+}

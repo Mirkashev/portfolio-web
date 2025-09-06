@@ -1,5 +1,15 @@
 ---
+import Typography from '@/shared/ui/Typography/Typography';
 import styles from './Main.module.scss';
+import { Image } from 'astro:assets';
+import MainImg from '@/assets/images/main-image.jpeg';
 ---
 
-<div class={styles.root}>block main</div>
+<section class={styles.root}>
+  <Typography className={styles.header} type='h1'>
+    I'm Mirkashev Ilnaz, a frontend developer based in Russia.
+  </Typography>
+  <div class={styles.imgWrapper}>
+    <Image src={MainImg} alt='logo' />
+  </div>
+</section>

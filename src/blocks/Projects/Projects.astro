@@ -1,0 +1,29 @@
+---
+import Typography from '@/shared/ui/Typography/Typography';
+import styles from './Projects.module.scss';
+
+const projects = [
+  {
+    title: 'Project One',
+    description: 'Description for project one.',
+    link: 'https://example.com/project-one',
+  },
+  {
+    title: 'Project Two',
+    description: 'Description for project two.',
+    link: 'https://example.com/project-two',
+  },
+  // Add more projects as needed
+];
+---
+
+<section class={styles.root}>
+  <Typography type='h2'>Projects</Typography>
+  <div class={styles.content}></div>
+  <!-- Use Typography here -->
+  <!-- <div class="project-list">
+    {projects.map(project => (
+      <ProjectCard title={project.title} description={project.description} link={project.link} />
+    ))}
+  </div> -->
+</section>

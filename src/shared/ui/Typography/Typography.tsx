@@ -21,6 +21,7 @@ const Typography = <T extends ElementType = 'p'>({
   ...props
 }: PolymorphicProps<T, Props>) => {
   const Tag = as ?? 'p';
+
   return (
     <Tag className={clsx(className, styles[type], { [styles.semibold]: semibold })} {...props} />
   );

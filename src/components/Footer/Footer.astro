@@ -1,5 +1,33 @@
 ---
 import styles from './Footer.module.scss';
+import { Image } from 'astro:assets';
+import IconLogo from '@/assets/icons/icon-logo.svg';
+import Typography from '@/shared/ui/Typography/Typography';
+import IconTg from '@/assets/icons/icon-tg.svg';
+import IconGithub from '@/assets/icons/icon-github.svg';
+import IconLinkedin from '@/assets/icons/icon-linkedin.svg';
 ---
 
-<footer class={styles.root}>Footer</footer>
+<footer class={styles.root}>
+  <div class={styles.content}>
+    <Image src={IconLogo} alt='logo' />
+    <Typography as='span' type='c'>
+      © 2025 Mirkashev Ilnaz, LLC. All rights reserved
+    </Typography>
+  </div>
+  <div class={styles.social}>
+    <a class={styles.link} href='https://t.me/fun_m1' target='_blank'>
+      <IconTg />
+    </a>
+    <a
+      class={styles.link}
+      href='https://www.linkedin.com/in/ilnaz-mirkashev-69239b2b7/'
+      target='_blank'
+    >
+      <IconLinkedin />
+    </a>
+    <a class={styles.link} target='_blank' href='https://github.com/Mirkashev'>
+      <IconGithub />
+    </a>
+  </div>
+</footer>

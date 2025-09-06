@@ -1,3 +1,28 @@
 .root {
-  padding: 106px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  max-width: 680px;
+}
+
+.imgWrapper {
+  background-color: var(--white);
+  height: 464px;
+  width: 500px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    position: absolute;
+    bottom: -20px;
+  }
 }
