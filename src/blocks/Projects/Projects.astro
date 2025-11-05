@@ -4,26 +4,69 @@ import styles from './Projects.module.scss';
 
 const projects = [
   {
-    title: 'Project One',
-    description: 'Description for project one.',
-    link: 'https://example.com/project-one',
+    title: 'Lototon',
+    description: 'Telegram mini-app game + lottery',
+    link: 'projects/lototon',
   },
   {
-    title: 'Project Two',
-    description: 'Description for project two.',
-    link: 'https://example.com/project-two',
+    title: 'Franz',
+    description: 'Landing for bali developer',
+    link: 'projects/franz',
+  },
+  {
+    title: 'CRM',
+    description: 'Internal CRM for managers',
+    link: 'projects/crm',
+  },
+  {
+    title: 'Whispers',
+    description: 'Telegram mini-app for sending whispers',
+    link: 'projects/whispers',
+  },
+  {
+    title: 'Automost',
+    description: 'React Native mobile application',
+    link: 'projects/automost',
+  },
+  {
+    title: 'Autoparts',
+    description: 'Auto parts marketplace',
+    link: 'projects/autoparts',
+  },
+  {
+    title: 'Patrik bot',
+    description: 'Task manager bot on telegram + miniapp',
+    link: 'projects/patrick',
+  },
+  {
+    title: 'Enot.io',
+    description: 'Fintech platform',
+    link: 'projects/enot',
   },
   // Add more projects as needed
 ];
 ---
 
 <section class={styles.root}>
-  <Typography type='h2'>Projects</Typography>
-  <div class={styles.content}></div>
-  <!-- Use Typography here -->
-  <!-- <div class="project-list">
-    {projects.map(project => (
-      <ProjectCard title={project.title} description={project.description} link={project.link} />
-    ))}
-  </div> -->
+  <div class={styles.header}>
+    <Typography type='h2'>Projects</Typography>
+    <Typography type='p' as='a' href='/projects'>All projects</Typography>
+  </div>
+
+  <div class={styles.content}>
+    {
+      projects.map((project) => (
+        <a href={project.link} class={styles.project}>
+          <div class={styles.projectText}>
+            <Typography type='p'>{project.title}</Typography>
+            <Typography className={styles.description} type='c'>
+              {project.description}
+            </Typography>
+          </div>
+
+          {/* <img src={project.link} alt='project' /> */}
+        </a>
+      ))
+    }
+  </div>
 </section>

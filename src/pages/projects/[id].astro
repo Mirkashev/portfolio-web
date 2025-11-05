@@ -1,0 +1,30 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Typography from '@/shared/ui/Typography/Typography';
+
+const { id } = Astro.params;
+
+export function getStaticPaths() {
+  return [
+    { params: { id: 'lototon' } },
+    { params: { id: 'rover' } },
+    { params: { id: 'spot' } },
+  ];
+}
+
+// Здесь можно добавить логику получения данных проекта по id
+const project = {
+  title: 'Project Title',
+  description: 'Project Description',
+  // другие данные проекта
+};
+---
+
+<Layout title={project.title}>
+  <div>
+    <Typography type='h1'>{project.title}</Typography>
+    <Typography type='p'>{project.description}</Typography>
+    {/* Остальной контент проекта */}
+    {id}
+  </div>
+</Layout>

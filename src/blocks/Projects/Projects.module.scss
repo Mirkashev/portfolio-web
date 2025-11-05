@@ -4,6 +4,16 @@
   gap: 32px;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    text-decoration: underline;
+  }
+}
+
 .content {
   border-top: 2px solid var(--black);
   padding-top: 64px;
@@ -11,6 +21,21 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 32px;
+  overflow: auto hidden;
+}
+
+.project {
+  min-width: 384px;
+
+  .projectText {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    .description {
+      color: var(--text-gray);
+    }
+  }
 }
 
 .description {
